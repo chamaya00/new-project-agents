@@ -1,0 +1,20 @@
+name: ci
+
+# Thin caller: the logic lives in the factory, at the release pinned below.
+#
+# The pin is the point. This repository keeps running that exact release until
+# somebody bumps the line and merges it - a new release in the factory changes
+# nothing here on its own. `/update-agents` proposes the bump as a pull
+# request, so the diff gets read here before it runs here.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    uses: chamaya00/agent-factory/.github/workflows/ci.yml@v1.3.0
+    with:
+      node-version: '20'
+      checks: 'typecheck,lint,test,build'

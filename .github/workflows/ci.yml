@@ -14,7 +14,7 @@ on:
 
 jobs:
   ci:
-    uses: chamaya00/agent-factory/.github/workflows/ci.yml@v1.3.0
+    uses: chamaya00/agent-factory/.github/workflows/ci.yml@v1.4.0
     with:
       node-version: '20'
       checks: 'typecheck,lint,test,build'

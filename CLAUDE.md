@@ -32,8 +32,12 @@ commit, and this section updated to match.
 
 ## Layout
 
-- `content/posts/`, `content/projects/` - the content, one Markdown file per
-  item, with front matter. **This is the only place content is edited.**
+- `content/posts/`, `content/projects/`, `content/about.md` - the content, one
+  Markdown file per item, with front matter. **This is the only place content
+  is edited.** It is seeded with two posts and two projects so that ordering
+  and the multi-item cases are testable from the first run. The front matter
+  those use is a starting shape, not the schema: the content-model ADR settles
+  that, and migrating the seed files is part of the same change.
 - `src/` - the generator, and its tests.
 - `docs/` - the published site. **Generated. Never hand-edited.** Also holds
   `decisions/`, `research/`, and `design/`, which are hand-written process

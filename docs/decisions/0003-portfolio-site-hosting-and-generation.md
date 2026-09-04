@@ -49,6 +49,16 @@ framework and no client-side rendering. `npm run build` runs it. `docs/` also
 carries a `.nojekyll` file, so Pages serves exactly those bytes rather than
 running Jekyll over them.
 
+That last file is a deliberate departure from what the factory provisions. A
+new repository arrives with Jekyll left on, so that its ADRs and research
+render as a browsable site from day one without anything being built. That is
+the right default for a project that publishes no product of its own. This one
+publishes a generated site, and a generated site wants its bytes served
+untouched, so Jekyll goes off here and the process records under
+`docs/decisions/`, `docs/research/`, and `docs/design/` are served as raw
+Markdown instead. Nothing links to them from the site; they are records, not
+pages.
+
 The generated site is committed. `npm test` regenerates it into a temporary
 directory and fails if the result differs from what is committed under `docs/`,
 so stale output is a red check rather than a wrong page. The generator writes

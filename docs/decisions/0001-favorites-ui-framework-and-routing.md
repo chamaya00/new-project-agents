@@ -1,7 +1,12 @@
 # ADR 0001: UI framework and routing approach for the favorites page
 
 Date: 2026-09-03
-Status: accepted
+Status: superseded by ADR 0003
+
+> Superseded by [ADR 0003](0003-portfolio-site-hosting-and-generation.md).
+> The favorites objective was dropped in favour of a portfolio site, so the
+> decision recorded below no longer describes anything this repository builds.
+> Kept because a decision that was made and then abandoned is part of the record.
 
 ## Context
 
